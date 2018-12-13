@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_post_put_del_pembeli"
+    android:scrollbars="vertical"
+    tools:context="com.example.abdazizs.go_loundry.PutDelCustomerActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <LinearLayout
+        android:layout_width="312dp"
+        android:layout_height="195dp"
+        android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="59dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="149dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvAddNama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingTop="15dp"
+                    android:text="Nama :"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvAddAlamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:paddingTop="15dp"
+                    android:text="Alamat :"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tvAddTelpn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    android:text="Telepon :"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    android:text="Password :"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/btAddPhotoId"
+                android:layout_marginEnd="42dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/edtAddNamaPembeli"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:hint="Nama"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edtAddAlamatPembeli"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Alamat"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edtAddTelpnPembeli"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:hint="Telpn"
+                    android:inputType="phone"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edtAddPassCustomer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    <ImageView
+            android:id="@+id/imgAddPhotoIdv"
+            android:layout_width="171dp"
+            android:layout_height="173dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/photoid" />
+        <Button
+            android:id="@+id/btAddPhotoId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgAddPhotoIdv"
+            android:layout_centerHorizontal="true"
+            android:text="Select Photo Id"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/LinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnAddData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Insert" />
+
+        <Button
+            android:id="@+id/btAddBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back" />
+    </LinearLayout>
+
+</RelativeLayout>
