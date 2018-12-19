@@ -15,7 +15,7 @@ public class CustomerHomeActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_home);
-        btPesan = findViewById(R.id.btnCustomerPesan);
+        btPesan = findViewById(R.id.btnAdminListOrder);
         btnCek = findViewById(R.id.btnCustomerCek);
 
         btPesan.setOnClickListener(new View.OnClickListener() {
@@ -29,7 +29,7 @@ public class CustomerHomeActivity extends AppCompatActivity {
         btnCek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), CustomerCekActivity.class);
+                Intent i = new Intent(getApplicationContext(), CustomerPesanDetailActivity.class);
                 startActivity(i);
             }
         });
@@ -37,7 +37,7 @@ public class CustomerHomeActivity extends AppCompatActivity {
         btnCek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), CustomerCekActivity.class);
+                Intent i = new Intent(getApplicationContext(), CustomerPesanDetailActivity.class);
                 startActivity(i);
             }
         });

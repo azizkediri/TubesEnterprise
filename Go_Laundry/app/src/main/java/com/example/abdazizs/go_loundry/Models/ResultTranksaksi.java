@@ -1,22 +1,19 @@
 package com.example.abdazizs.go_loundry.Models;
 
-
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by alhamdulillah on 11/2/16.
- */
-public class ResultUser {
+public class ResultTranksaksi {
     @SerializedName("status")
     private String status;
     @SerializedName("result")
-    GetUser User;
+    private List<GetTranksaksi> result = new ArrayList<GetTranksaksi>();
     @SerializedName("message")
     private String message;
 
-    public ResultUser() {}
+    public ResultTranksaksi() {}
 
     public String getStatus() {
         return status;
@@ -24,15 +21,12 @@ public class ResultUser {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    public GetUser getUser() {
-        return  User;
+    public List<GetTranksaksi> getResult() {
+        return result;
     }
-
-    public void setUser(GetUser user) {
-        User = user;
+    public void setResult(List<GetTranksaksi> result) {
+        this.result = result;
     }
-
     public String getMessage() {
         return message;
     }

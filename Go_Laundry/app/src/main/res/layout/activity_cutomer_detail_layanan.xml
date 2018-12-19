@@ -79,7 +79,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/txtCustDtlPsnCuci"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
@@ -88,7 +88,7 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/txtCustDtlPsnSetrika"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
@@ -97,7 +97,7 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/txtCustDtlPsnXpress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
@@ -106,7 +106,7 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/txtCustDtlPsnAntar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
@@ -115,7 +115,7 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/txtCustDtlPsnHarga"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
@@ -124,7 +124,7 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/txtCustDtlPsnStatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
@@ -135,10 +135,16 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnCustPsnDtlHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
         android:text="Home" />
+
+    <Button
+        android:id="@+id/btnCustPsnDtlKofirmasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Konfirmasi" />
 
 </LinearLayout>

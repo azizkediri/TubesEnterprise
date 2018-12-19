@@ -28,7 +28,7 @@
             android:orientation="vertical">
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/radCuci"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
@@ -36,7 +36,7 @@
                 android:textSize="24sp" />
 
             <RadioButton
-                android:id="@+id/radioButton4"
+                android:id="@+id/radSetrika"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
@@ -44,7 +44,7 @@
                 android:textSize="24sp" />
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/radXpress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
@@ -52,7 +52,7 @@
                 android:textSize="24sp" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/radAntar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
@@ -104,7 +104,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnCustPesanDetail"
+        android:id="@+id/btnCustAddPesan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

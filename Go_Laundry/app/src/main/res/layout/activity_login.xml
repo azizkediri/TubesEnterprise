@@ -34,7 +34,7 @@
             android:paddingTop="20dp">
 
             <EditText
-                android:id="@+id/editEmailLog"
+                android:id="@+id/editUsernameLog"
                 android:layout_width="400dp"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/textView1"

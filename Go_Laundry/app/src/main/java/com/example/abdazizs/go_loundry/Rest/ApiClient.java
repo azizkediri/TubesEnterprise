@@ -10,8 +10,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by alhamdulillah on 10/23/16.
  */
 public class ApiClient {
-    public static final String BASE_URL = "http://192.168.88.188/rest_server_golaundry/index.php/";
-    //public static final String BASE_upload = "http://192.168.88.188/rest_server_golaundry/application/";
+    public static final String BASE_URL = "http://192.168.1.15/rest_server_golaundry/index.php/";
+    public static final String BASE_upload = "http://192.168.1.15/rest_server_golaundry/application/";
     private static Retrofit retrofit = null;
     public static Retrofit getClient() {
         if (retrofit==null) {
