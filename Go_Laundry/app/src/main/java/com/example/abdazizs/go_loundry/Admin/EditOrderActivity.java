@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.abdazizs.go_loundry.Models.PutDelTranksaksi;
 import com.example.abdazizs.go_loundry.Models.ResultTranksaksi;
 import com.example.abdazizs.go_loundry.R;
 import com.example.abdazizs.go_loundry.Rest.ApiClient;
@@ -21,6 +22,7 @@ import retrofit2.Response;
 
 public class EditOrderActivity extends AppCompatActivity {
     Button btpdate, btBack;
+    Intent mIntent;
     EditText edAntar;
     EditText edSatus;
     TextView tvNama;
@@ -36,8 +38,8 @@ public class EditOrderActivity extends AppCompatActivity {
         btpdate = findViewById(R.id.btnAdminEditUbah);
         tvNama = findViewById(R.id.txtAdminEditNmUser);
 
-        Intent mIntent = getIntent();
-        id = mIntent.getIntExtra("id_tranksaksi",0);
+        mIntent = getIntent();
+        id = mIntent.getIntExtra("id_tranksaksi",1);
         antar = mIntent.getIntExtra("antar",0);
         status = mIntent.getIntExtra("status",0);
 
@@ -54,20 +56,26 @@ public class EditOrderActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Call<ResultTranksaksi> mTra = mApiInterface.putTranksaksi(
-                        id,
-                        newAntar,
-                        newStatus,"put" );
-                mTra.enqueue(new Callback<ResultTranksaksi>() {
+                Call<PutDelTranksaksi> mTra = mApiInterface.putTranksaksi(
+                        mIntent.getIntExtra("id_tranksaksi",0),
+                        Integer.parseInt(edAntar.getText().toString()),
+                        Integer.parseInt(edSatus.getText().toString())
+                );
+                mTra.enqueue(new Callback<PutDelTranksaksi>() {
                     @Override
-                    public void onResponse(Call<ResultTranksaksi> call, Response<ResultTranksaksi> response) {
+                    public void onResponse(Call<PutDelTranksaksi> call, Response<PutDelTranksaksi> response) {
+                        String status = response.body().getStatus();
+                        if (status.equals("success")) {
                         Toast.makeText(getApplicationContext(), "Suksess Ditambah", Toast.LENGTH_SHORT).show();
                         finish();
+                        }
+//                        mIntent = new Intent(getApplicationContext(),ListOrderActivity.class);
+//                        startActivity(mIntent);
                     }
 
                     @Override
-                    public void onFailure(Call<ResultTranksaksi> call, Throwable t) {
-                        Toast.makeText(getApplicationContext(), "error " + t, Toast.LENGTH_SHORT).show();
+                    public void onFailure(Call<PutDelTranksaksi> call, Throwable t) {
+                        Toast.makeText(getApplicationContext(), "error     " + t, Toast.LENGTH_SHORT).show();
                     }
                 });
             }

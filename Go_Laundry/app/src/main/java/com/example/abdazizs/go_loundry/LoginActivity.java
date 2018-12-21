@@ -13,6 +13,7 @@ import com.example.abdazizs.go_loundry.Admin.AdminHomeActivity;
 import com.example.abdazizs.go_loundry.Customer.CRUD.CustomerAddData;
 import com.example.abdazizs.go_loundry.Customer.CustomerHomeActivity;
 import com.example.abdazizs.go_loundry.Models.GetUser;
+import com.example.abdazizs.go_loundry.Models.PutDelUser;
 import com.example.abdazizs.go_loundry.Models.ResultUser;
 import com.example.abdazizs.go_loundry.Rest.ApiClient;
 import com.example.abdazizs.go_loundry.Rest.ApiInterface;
@@ -45,20 +46,23 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Call<ResultUser> t = mApiInterface.getLogin(nama_cust.getText().toString(),password.getText().toString());
-                t.enqueue(new Callback<ResultUser>() {
+                Call<PutDelUser> t = mApiInterface.getLogin(nama_cust.getText().toString(),password.getText().toString());
+                t.enqueue(new Callback<PutDelUser>() {
                     @Override
-                    public void onResponse(Call<ResultUser> call, Response<ResultUser> response) {
+                    public void onResponse(Call<PutDelUser> call, Response<PutDelUser> response) {
                         String status = response.body().getStatus();
                         if (status.equals("Berhasil")) {
                             GetUser cstmr = response.body().getUser();
 
                             if (cstmr.getLevel()==1) {
                                 Intent i = new Intent(getApplicationContext(), AdminHomeActivity.class);
+                                i.putExtra("nama",nama_cust.getText().toString());
+                                i.putExtra("id",cstmr.getId());
                                 startActivity(i);
                                 finish();
                             } else {
                                 Intent i =new Intent(getApplicationContext(), CustomerHomeActivity.class);
+                                i.putExtra("nama",nama_cust.getText().toString());
                                 startActivity(i);
                                 finish();
 
@@ -70,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<ResultUser> call, Throwable t) {
+                    public void onFailure(Call<PutDelUser> call, Throwable t) {
 
                         Toast.makeText(getApplicationContext(),"error"+t,Toast.LENGTH_SHORT).show();
 

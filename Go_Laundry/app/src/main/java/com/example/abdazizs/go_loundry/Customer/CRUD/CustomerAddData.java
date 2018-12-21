@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.abdazizs.go_loundry.Models.PutDelUser;
 import com.example.abdazizs.go_loundry.Models.ResultUser;
 import com.example.abdazizs.go_loundry.R;
 import com.example.abdazizs.go_loundry.Rest.ApiClient;
@@ -43,13 +44,13 @@ public class CustomerAddData extends AppCompatActivity {
         setContentView(R.layout.activity_customer_sign_up);
         mContext = getApplicationContext();
         mImageView = (ImageView) findViewById(R.id.ImgCustDaftar);
-        btAddPhoto = (Button) findViewById(R.id.btnCustTmbhDaftar);
+        btAddPhoto = (Button) findViewById(R.id.btnCustTmbhImgDaftar);
         edtPassword = (EditText) findViewById(R.id.editCustDaftarPass);
         edtAddNamaCustomer = (EditText) findViewById(R.id.editCustDaftarUsername);
         edtAddAlamatCustomer = (EditText) findViewById(R.id.editCustDaftarAlamat);
         edtAddTelp = (EditText) findViewById(R.id.editAddCustTelpn);
         btAddData = (Button) findViewById(R.id.btnCustTmbhDaftar);
-        //btAddBack = (Button) findViewById(R.id.btAddBack);
+        btAddBack = (Button) findViewById(R.id.btnCustDaftarCancel);
         tvAddMessage = (TextView) findViewById(R.id.txtMessage);
         btAddData.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,11 +74,11 @@ public class CustomerAddData extends AppCompatActivity {
                 RequestBody reqPass= MultipartBody.create(MediaType.parse("multipart/form-data"),
                         (edtPassword.getText().toString().isEmpty()==true)?"":edtPassword.getText().toString());
                 RequestBody reqAction = MultipartBody.create(MediaType.parse("multipart/form-data"), "post");
-                Call<ResultUser> mCustomerCall = mApiInterface.postUser(body, reqNama, reqAlamat, reqJnsKel, reqPass,1, reqAction );
+                Call<PutDelUser> mCustomerCall = mApiInterface.postUser(body, reqNama, reqAlamat, reqJnsKel, reqPass,0, reqAction );
 
-                mCustomerCall.enqueue(new Callback<ResultUser>() {
+                mCustomerCall.enqueue(new Callback<PutDelUser>() {
                     @Override
-                    public void onResponse(Call<ResultUser> call, Response<ResultUser> response) {
+                    public void onResponse(Call<PutDelUser> call, Response<PutDelUser> response) {
 //                     Log.d("Insert Retrofit",response.body().getStatus());
                         if (response.body().getStatus().equals("failed")){
                             tvAddMessage.setText("Retrofit Update1 \n Status = "+response.body().getStatus() +"\n"+ "Message ="+response.body().getMessage()+"\n");
@@ -93,7 +94,7 @@ public class CustomerAddData extends AppCompatActivity {
                         }
                     }
                     @Override
-                    public void onFailure(Call<ResultUser> call, Throwable t) {
+                    public void onFailure(Call<PutDelUser> call, Throwable t) {
 // Log.d("Insert Retrofit", t.getMessage());
                         tvAddMessage.setText("Retrofit Update \n Status = "+ t.getMessage());
                     }

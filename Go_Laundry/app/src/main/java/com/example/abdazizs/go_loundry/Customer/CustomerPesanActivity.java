@@ -12,8 +12,12 @@ import com.example.abdazizs.go_loundry.R;
 
 public class CustomerPesanActivity extends AppCompatActivity implements View.OnClickListener {
     Button btPesanDetail;
-    RadioButton rbCuci, rbSetrika, rbXpress, rbAntar;
+    private RadioButton rbCuci, rbSetrika, rbXpress, rbAntar;
     private int cuci, setrika, xpress, antar;
+    private String nama;
+    private Intent mInt;
+    int id;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,33 +31,55 @@ public class CustomerPesanActivity extends AppCompatActivity implements View.OnC
         rbXpress = findViewById(R.id.radXpress);
         rbAntar = findViewById(R.id.radAntar);
 
+        rbCuci.setOnClickListener(this);
+        rbSetrika.setOnClickListener(this);
+        rbXpress.setOnClickListener(this);
+        rbAntar.setOnClickListener(this);
+
+        mInt = getIntent();
+        nama = mInt.getStringExtra("nama");
+        id = mInt.getIntExtra("id",0);
+
+
+
         btPesanDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i =  new Intent(getApplicationContext(), CustomerPesanDetailActivity.class);
-                if (rbAntar.isSelected()){
+                if (rbAntar.isChecked()){
                     antar = 1;
+                }else{
+                    antar = 0;
                 }
-                if (rbCuci.isSelected()){
+                if (rbCuci.isChecked()){
                     cuci = 1;
+                }else{
+                    cuci = 0;
                 }
-                if (rbSetrika.isSelected()){
+                if (rbSetrika.isChecked()){
                     setrika = 1;
+                }else{
+                    setrika = 0;
                 }
-                if (rbXpress.isSelected()){
+                if (rbXpress.isChecked()){
                     xpress = 1;
+                }else{
+                    xpress = 0;
                 }
 
                 i.putExtra("cuci",cuci);
                 i.putExtra("setrika",setrika);
                 i.putExtra("antar",antar);
                 i.putExtra("xpress",xpress);
+                i.putExtra("nama",nama);
+
 
                 startActivity(i);
             }
         });
 
     }
+
 
     @Override
     public void onClick(View view) {
@@ -96,5 +122,4 @@ public class CustomerPesanActivity extends AppCompatActivity implements View.OnC
                 break;
         }
     }
-
 }

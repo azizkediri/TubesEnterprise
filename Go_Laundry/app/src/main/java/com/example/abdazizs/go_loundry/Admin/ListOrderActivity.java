@@ -8,9 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.abdazizs.go_loundry.Adapters.RVAdminOrder;
-import com.example.abdazizs.go_loundry.Adapters.RVAdminUser;
 import com.example.abdazizs.go_loundry.Models.GetTranksaksi;
-import com.example.abdazizs.go_loundry.Models.GetUser;
 import com.example.abdazizs.go_loundry.Models.ResultTranksaksi;
 import com.example.abdazizs.go_loundry.R;
 import com.example.abdazizs.go_loundry.Rest.ApiClient;
@@ -22,8 +20,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static java.security.AccessController.getContext;
-
 public class ListOrderActivity extends AppCompatActivity {
     RecyclerView rvOrder;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -34,7 +30,7 @@ public class ListOrderActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_orderan);
+        setContentView(R.layout.activity_admin_list_order);
         rvOrder = (RecyclerView) findViewById(R.id.recyAdminOrder);
         rvOrder.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);

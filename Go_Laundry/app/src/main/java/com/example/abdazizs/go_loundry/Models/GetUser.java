@@ -9,7 +9,7 @@ public class GetUser {
     @SerializedName("id_user")
     private String id;
 
-    @SerializedName("nama_cust")
+    @SerializedName("nama")
     private String nama;
 
     @SerializedName("alamat")

@@ -6,6 +6,9 @@ public class GetTranksaksi {
     @SerializedName("id_tranksaksi")
     private int idTran;
 
+    @SerializedName("id_user")
+    private int idUser;
+
     @SerializedName("nama_user")
     private String nama;
 
@@ -24,22 +27,30 @@ public class GetTranksaksi {
     @SerializedName("total")
     private int total;
 
-    @SerializedName("tanggal")
-    private String tanggal;
+//    @SerializedName("tanggal")
+//    private String tanggal;
 
     @SerializedName("status")
-    private int statusLay;
+    private int status;
 
-    public GetTranksaksi(int idTran, String nama, int cuci, int setrika, int express, int antar, int total, String tanggal, int statusLay) {
+    public GetTranksaksi(int idTran, int idUser, String nama, int cuci, int setrika, int express, int antar, int total, int status) {
         this.idTran = idTran;
+        this.idUser = idUser;
         this.nama = nama;
         this.cuci = cuci;
         this.setrika = setrika;
         this.express = express;
         this.antar = antar;
         this.total = total;
-        this.tanggal = tanggal;
-        this.statusLay = statusLay;
+        this.status = status;
+    }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
     public int getIdTran() {
@@ -98,19 +109,19 @@ public class GetTranksaksi {
         this.total = total;
     }
 
-    public String getTanggal() {
-        return tanggal;
-    }
-
-    public void setTanggal(String tanggal) {
-        this.tanggal = tanggal;
-    }
+//    public String getTanggal() {
+//        return tanggal;
+//    }
+//
+//    public void setTanggal(String tanggal) {
+//        this.tanggal = tanggal;
+//    }
 
     public int getStatusLay() {
-        return statusLay;
+        return status;
     }
 
     public void setStatusLay(int statusLay) {
-        this.statusLay = statusLay;
+        this.status = statusLay;
     }
 }

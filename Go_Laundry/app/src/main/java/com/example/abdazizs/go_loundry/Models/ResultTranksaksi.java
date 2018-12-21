@@ -6,10 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ResultTranksaksi {
-    @SerializedName("status")
+    @SerializedName("statusWeb")
     private String status;
+
     @SerializedName("result")
     private List<GetTranksaksi> result = new ArrayList<GetTranksaksi>();
+
     @SerializedName("message")
     private String message;
 
